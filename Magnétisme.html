@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sébastien Fouché - Magnétiseur - Coupeur de Feu</title>
+  <meta name="description" content="Sébastien Fouché - Magnétiseur - Coupeur de Feu" />
+  <meta property="og:title" content="Sébastien Fouché - Magnétiseur - Coupeur de Feu />
+  <meta property="og:description" content="Logos, branding, affiches, web design. Une écoute à votre bien être." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#8b5cf6" />
+  <!-- Favicon inline (SVG) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs/%3E%3Crect width='64' height='64' rx='14' fill='%238b5cf6'/%3E%3Cpath d='M14 42h10l3-8 3 8h10L28 22h-6L14 42zm36-20h-8v4h4v16h4V22z' fill='white'/%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sébastien Fouché",
+    "url": "",
+    "logo": "",
+    "sameAs": ["#", "#", "#"]
+  }
+  </script>
+  <style>
+    /* ====== Thème & design système ====== */
+    :root {
+      --bg: #0c0a1f;          /* fond sombre élégant */
+      --surface: #14122b;     /* cartes / header */
+      --text: #e9e7ff;        /* texte principal */
+      --muted: #a6a1cf;       /* texte secondaire */
+      --brand: #8b5cf6;       /* violet */
+      --brand-2: #ec4899;     /* rose */
+      --ring: rgba(139,92,246,.35);
+      --border: rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(2, 6, 23, .45);
+    }
+    :root.light {
+      --bg: #f7f7fb;
+      --surface: #ffffff;
+      --text: #17161f;
+      --muted: #585a78;
+      --brand: #7c3aed;
+      --brand-2: #db2777;
+      --ring: rgba(124,58,237,.25);
+      --border: rgba(0,0,0,.08);
+      --shadow: 0 10px 24px rgba(2, 6, 23, .08);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1400px 700px at 100% -10%, rgba(139,92,246,.18), transparent 60%),
+                  radial-gradient(900px 600px at -10% 10%, rgba(236,72,153,.12), transparent 60%), var(--bg);
+    }
+    .container { width: min(1140px, 92%); margin-inline: auto; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(10px);
+      background: linear-gradient(180deg, rgba(12,10,31,.75), rgba(12,10,31,.35));
+      border-bottom: 1px solid var(--border);
+    }
+    :root.light header { background: rgba(255,255,255,.7); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 14px 0; }
+    .brand { display:flex; align-items:center; gap:.7rem; font-weight:800; letter-spacing:.3px; }
+    .brand-logo { width: 30px; height: 30px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display:grid; place-items:center; color:#fff; font-size: .85rem; box-shadow: var(--shadow); }
+    nav ul { display:flex; gap:.6rem; list-style:none; padding:0; margin:0; }
+    nav a { text-decoration:none; color: var(--text); opacity:.9; padding:.55rem .8rem; border-radius: 10px; }
+    nav a:hover, nav a:focus { background: rgba(255,255,255,.06); outline: none; }
+    .btn { display:inline-flex; align-items:center; gap:.5rem; border:1px solid var(--border); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); color:var(--text); padding:.65rem .95rem; border-radius: 12px; text-decoration:none; box-shadow: var(--shadow); }
+    .btn.primary { border-color: transparent; background: linear-gradient(135deg, var(--brand), var(--brand-2)); }
+    .btn:focus { box-shadow: 0 0 0 4px var(--ring); outline: none; }
+    .menu-toggle { display:none; }
+    @media (max-width: 780px) {
+      nav ul { display:none; position:absolute; right:4%; top:58px; flex-direction:column; background: var(--surface); padding: .6rem; border-radius: 12px; box-shadow: var(--shadow); border:1px solid var(--border); }
+      nav ul.open { display:flex; }
+      .menu-toggle { display:inline-flex; }
+    }
+
+    /* Hero */
+    .hero { padding: 74px 0 48px; display:grid; grid-template-columns: 1.1fr .9fr; gap: 2rem; align-items:center; }
+    .hero h1 { font-size: clamp(2.1rem, 4.6vw, 3.2rem); line-height: 1.05; margin: 0 0 .6rem; }
+    .lead { font-size: clamp(1rem, 1.6vw, 1.15rem); color: var(--muted); margin: 0 0 1.2rem; }
+    .tag { display:inline-block; font-size:.8rem; padding:.35rem .6rem; border:1px solid var(--border); border-radius: 999px; color: var(--muted); }
+    .cta { display:flex; gap:.8rem; flex-wrap: wrap; }
+    .card { background: var(--surface); border:1px solid var(--border); border-radius: 16px; padding: 1rem; box-shadow: var(--shadow); }
+    .preview { aspect-ratio: 16/10; border-radius: 14px; background:
+      radial-gradient(120px 80px at 20% 20%, rgba(139,92,246,.25), transparent 40%),
+      radial-gradient(140px 90px at 80% 0%, rgba(236,72,153,.22), transparent 40%),
+      linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      border:1px dashed var(--border); display:grid; place-items:center; color:var(--muted);
+      font-size: .95rem; text-align:center;
+    }
+    @media (max-width: 980px){ .hero { grid-template-columns: 1fr; } }
+
+    /* Sections */
+    section { padding: 60px 0; }
+    .section-title { font-size: clamp(1.4rem, 2.8vw, 2rem); margin: 0 0 .5rem; }
+    .section-desc { color: var(--muted); margin: 0 0 1.8rem; }
+
+    /* Services */
+    .grid { display:grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px){ .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px){ .grid { grid-template-columns: 1fr; } }
+    .service { padding: 1rem; border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--border); }
+    .service h3 { margin:.4rem 0 .3rem; }
+    .icon { width: 44px; height: 44px; border-radius: 10px; display:grid; place-items:center; background: linear-gradient(135deg, var(--brand), var(--brand-2)); color:white; box-shadow: var(--shadow); }
+
+    /* Galerie */
+    .gallery { display:grid; grid-template-columns: repeat(6, 1fr); gap: .6rem; }
+    .gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 12px; filter: saturate(1.05) contrast(1.05); }
+    @media (max-width: 800px){ .gallery { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Process */
+    .steps { display:grid; grid-template-columns: repeat(4,1fr); gap:.8rem; }
+    .step { text-align:center; padding:1rem; border:1px dashed var(--border); border-radius:14px; }
+    .step strong { display:block; margin-top:.4rem; }
+    @media (max-width: 900px){ .steps { grid-template-columns: repeat(2,1fr); } }
+
+    /* Tarifs */
+    .pricing { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; }
+    .plan { padding:1rem; border-radius:16px; background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--border); }
+    .price { font-size:1.8rem; font-weight:800; }
+    @media (max-width: 900px){ .pricing { grid-template-columns: 1fr; } }
+
+    /* Témoignages */
+    .testimonials { display:grid; gap: 1rem; grid-template-columns: repeat(3, 1fr); }
+    .quote { position:relative; padding: 1rem 1rem 1rem 3rem; }
+    .quote::before { content:"\201C"; position:absolute; left:.8rem; top:-.2rem; font-size: 3.6rem; background: linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent; opacity:.8; }
+    @media (max-width: 900px){ .testimonials { grid-template-columns: 1fr; } }
+
+    /* Contact */
+    form { display:grid; gap:.8rem; max-width: 680px; }
+    label { font-weight: 600; font-size:.95rem; }
+    input, textarea, select { width:100%; padding:.85rem 1rem; border-radius: 12px; border:1px solid var(--border); background: rgba(255,255,255,.04); color:var(--text); }
+    input::placeholder, textarea::placeholder { color: #9aa3b8; }
+    :root.light input, :root.light textarea, :root.light select { background: #fff; border-color: rgba(0,0,0,.1); color: var(--text); }
+
+    /* Footer */
+    footer { padding: 24px 0 60px; color: var(--muted); border-top: 1px solid var(--border); }
+
+    /* Utilitaires */
+    .muted { color: var(--muted); }
+    .center { text-align:center; }
+    .stack-2 > * + * { margin-top: .5rem; }
+    .stack-3 > * + * { margin-top: .75rem; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
+
+    /* Apparition */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Navigation principale">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true">SF</div>
+        <span>Sébastien Fouché</span>
+      </div>
+      <button class="menu-toggle btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav>
+        <ul id="menu">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#services">Soins</a></li>
+          
+          
+          <li><a href="#devis">Tarifs</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="actions" style="display:flex; gap:.6rem;">
+        <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Basculer le thème">🌙</button>
+        <a class="btn primary" href="#devis">Renseignez vous</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="accueil" class="container">
+    <section class="hero reveal">
+      <div>
+        <span class="tag">Sébastien Fouché - Magnétiseur - Coupeur de Feu</span>
+        <h1>Faites une pause</h1>
+        <p class="lead">Sébastien Fouché - Magnétiseur - Coupeur de Feu — Je soulage vos maux.</p>
+        <div class="cta">
+          <a class="btn" href="#contact">Parler de votre histoire</a>
+        </div>
+        <p class="muted" style="margin-top:1rem">Ecoute • Soulagement.</p>
+      </div>
+      <div class="card preview" aria-hidden="true">
+        <div>
+          <strong></strong><br/>
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="Pendule de radiesthésie suspendu au-dessus d’une main ouverte, lumière douce, plantes vertes en arrière-plan, ambiance calme et concentrée" style="width:100%; max-width:1200px; height:auto; border-radius:12px; box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="reveal">
+      <h2 class="section-title">Services</h2>
+      <p class="section-desc">Des maux à la parole.</p>
+      <div class="grid">
+        <article class="service card">
+            <div class="icon" aria-hidden="true">🔥</div>
+          <h3>Brulures et effets secondaires</h3>
+          <p>Douleurs, brûlures, zona, poste traitement.</p>
+        </article>
+        <article class="service card">
+            <div class="icon" aria-hidden="true">💪</div>
+          <h3>Douleurs musculaires et articulaires</h3>
+          <p>Soulagement poste traumatique.</p>
+        <article class="service card">
+          <div class="icon" aria-hidden="true">🧾</div>
+          <h3>Accompagnement émotionnel</h3>
+          <p>Recentrage personnel, réflexion sur soi-même.</p>
+        </article>
+        <article class="service card">
+          <div class="icon" aria-hidden="true">🚀</div>
+          <h3>Accompagnement</h3>
+          <p>Conseil décisionnel, examen, apaisement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="reveal">
+      <h2 class="section-title">Cheminement</h2>
+      <p class="section-desc">Une certaine volonté.</p>
+      <div class="steps">
+        <div class="step"><div class="icon" aria-hidden="true">📝</div><strong>1. Paroles</strong><span class="muted">Prise de contact</span></div>
+        <div class="step"><div class="icon" aria-hidden="true">🧭</div><strong>2. Questions</strong><span class="muted">Objectifs, cibles, Besoins.</span></div>
+        <div class="step"><div class="icon" aria-hidden="true">🧩</div><strong>3. Soins</strong><span class="muted">Bénéfice, soulagement.</span></div>
+        <div class="step"><div class="icon" aria-hidden="true">📦</div><strong>4. Résultats, réflexion</strong><span class="muted">Retour sur expérience.</span></div>
+      </div>
+    </section>
+
+    <section id="devis" class="reveal">
+      <h2 class="section-title">Tarifs & Devis</h2>
+      <p class="section-desc">Des forfaits clairs, adaptables selon vos besoins.</p>
+      <div class="pricing">
+        <article class="plan card">
+          <h3>Consultation distancielle</h3>
+          <p class="price">35€ par séance</p>
+          <ul>
+            <li>Séance de 45 minutes</li>
+            <li>Échange, soin par téléphone ou visioconférence</li>
+            <li>Conseils personnalisés</li>
+          <a class="btn" href="#contact">Je suis intéressé</a>
+        </article>
+        <article class="plan card">
+          <h3>A domicile</h3>
+          <p class="price">60€ par séance</p>
+          <ul>
+            <li>Séance de 45 minutes</li>
+            <li>Échange, soin</li>
+          </ul>
+          <a class="btn primary" href="#contact">Je suis intéressé</a>
+        </article>
+        <article class="plan card">
+          <h3>Sur‑mesure</h3>
+          <p class="price">Sur devis</p>
+          <ul>
+            <li>Analyse complete</li>
+          <li>Accompagnement dans le temps</li>
+          </ul>
+          <a class="btn" href="#contact">Parlons-en</a>
+        </article>
+      </div>
+      <p class="muted" style="margin-top:.8rem">Prix indicatifs HT. Projet étudiant/asso : tarifs adaptés.</p>
+    </section>
+
+    <section id="apropos" class="reveal">
+      <h2 class="section-title">À propos</h2>
+      <p class="section-desc">Sébastien Fouché, c’est un regard bienveillant et une méthode pragmatique.</p>
+      <div class="card" style="display:grid; grid-template-columns: 1fr 1.2fr; gap:1rem; align-items:center;">
+        <div class="preview" aria-hidden="true" style="min-height:220px;">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Pendule de radiesthésie" style="width:100%; height:auto; border-radius:10px; box-shadow: var(--shadow);" />
+        </div>
+        <div>
+          <p>Bienvenue
+
+Je m’appelle Sébastien Fouché et j’exerce en tant que magnétiseur – coupeur de feu.
+Depuis plusieurs années, je me passionne pour l’accompagnement des personnes en recherche de mieux-être, que ce soit pour apaiser certains inconforts physiques, calmer les tensions du quotidien ou retrouver un équilibre intérieur.
+
+Mon approche, simple et respectueuse, s’appuie sur l’écoute attentive de vos besoins et la mise en œuvre de techniques énergétiques adaptées à chaque situation.
+
+Le magnétisme est une méthode énergétique ancestrale qui vise à favoriser l’harmonie entre le corps et l’esprit.
+En tant que praticien, je mets mon énergie et mon écoute au service de chacun, afin de contribuer à un apaisement des douleurs, à une détente profonde et à un regain de vitalité.
+Le coupeur de feu, quant à lui, intervient pour soulager les sensations de brûlures, qu’elles soient liées à un accident domestique, à un traitement médical comme la radiothérapie, ou à d’autres inconforts similaires.
+
+Une démarche d’accompagnement,
+
+Je tiens à préciser que mon intervention ne remplace en aucun cas un suivi médical. Elle s’inscrit en complément d’un traitement, pour apporter du soutien, du confort et favoriser un meilleur équilibre émotionnel et énergétique.
+Je ne pose pas de diagnostic et n’interfère jamais avec les prescriptions médicales : seul votre médecin est habilité à établir un traitement médical.
+
+Pour qui ?
+
+Toute personne souhaitant apaiser certaines douleurs ou gênes physiques.
+
+Les personnes traversant des périodes de stress, d’anxiété ou de fatigue.
+
+Celles et ceux qui désirent retrouver une sensation de calme, d’harmonie et de mieux-être.
+
+Comment se déroule une séance ?
+
+Chaque rencontre est un moment d’écoute et de détente. Après un temps d’échange, je procède à la séance de magnétisme ou de coupeur de feu en fonction de vos besoins, dans le respect de votre rythme et de votre ressenti.
+
+👉 Important : Mes pratiques ne se substituent pas à un traitement médical. Elles peuvent être envisagées comme un accompagnement complémentaire dans une démarche globale de bien-être.</p>
+          <ul class="stack-2">
+            <li>✅ Accompagnement</li>
+            <li>✅ Bienveillance</li>
+            <li>✅ Soulagement</li>
+          </ul>
+          <div style="display:flex; gap:.6rem; margin-top:.6rem;">
+            <a class="btn primary" href="#contact">Me contacter</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal" aria-labelledby="temoignages-title">
+      <h2 id="temoignages-title" class="section-title">Témoignages</h2>
+      <p class="section-desc">Ce que disent mes clients.</p>
+      <div class="testimonials">
+        <blockquote class="quote card">
+          <p>Identité claire et moderne, déclinée partout sans effort. Top !</p>
+          <footer class="muted">— Michelle, Benet</footer>
+        </blockquote>
+        <blockquote class="quote card">
+          <p>Les maux qui me hantais se sont envolés, interaction super fluide.</p>
+          <footer class="muted">— Dominique, développeur</footer>
+        </blockquote>
+        <blockquote class="quote card">
+          <p>Réconfortant, une écoute précieuse, et respect de la personne.</p>
+          <footer class="muted">— Martin, responsable admi'</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-desc">Décrivez brièvement votre projet, je reviens vers vous rapidement.</p>
+      <form id="contactForm" novalidate>
+        <div>
+          <label for="name">Nom</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="vous@exemple.com" required />
+        </div>
+        <div>
+          <label for="subject">Objet</label>
+          <select id="subject" name="subject" required>
+            <option value="">Sélectionnez…</option>
+            <option>Demande de RDV</option>
+            <option>Renseignements</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+        </div>
+        <label style="display:flex; gap:.5rem; align-items:flex-start;">
+          <input type="checkbox" id="consent" required />
+          <span>J’accepte que mes informations soient utilisées pour me recontacter (RGPD).</span>
+        </label>
+        <div style="display:flex; gap:.6rem; align-items:center;">
+          <button class="btn primary" type="submit">Envoyer</button>
+          <a class="btn" href="mailto:sfouche.arinfo@gmail.com?subject=Demande%20de%20contact">Ou par email</a>
+          <span id="formStatus" class="muted" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:.8rem; flex-wrap:wrap;">
+      <div>© <span id="year"></span> Sébastien Fouché — Tous droits réservés.</div>
+      <div style="display:flex; gap:.6rem;">
+       
+      </div>
+    </div>
+  </footer>
+
+  <button id="toTop" class="btn" style="position:fixed; right:1rem; bottom:1rem; display:none;">↑ Haut</button>
+
+  <script>
+    // ====== Menu mobile ======
+    const menuBtn = document.querySelector('.menu-toggle');
+    const menuList = document.getElementById('menu');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuList.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // ====== Thème (sombre/clair) ======
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') root.classList.add('light');
+    themeToggle.textContent = root.classList.contains('light') ? '🌞' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('light');
+      const isLight = root.classList.contains('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      themeToggle.textContent = isLight ? '🌞' : '🌙';
+      themeToggle.setAttribute('aria-pressed', String(isLight));
+    });
+
+    // ====== Apparition au scroll ======
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ====== Bouton retour haut ======
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => {
+      toTop.style.display = window.scrollY > 600 ? 'inline-flex' : 'none';
+    });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ====== Année courante ======
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ====== Formulaire ======
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('formStatus');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString().trim();
+      const email = (data.get('email') || '').toString().trim();
+      const subject = (data.get('subject') || '').toString().trim();
+      const message = (data.get('message') || '').toString().trim();
+      const consent = document.getElementById('consent').checked;
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!name || !emailOk || !subject || !message || !consent) {
+        status.textContent = 'Veuillez remplir correctement tous les champs et accepter la mention RGPD.';
+        status.style.color = '#f43f5e';
+        return;
+      }
+
+      status.textContent = 'Envoi en cours…';
+      status.style.color = '';
+      setTimeout(() => {
+        status.textContent = 'Merci ! Votre message a bien été envoyé.';
+        form.reset();
+      }, 800);
+    });
+  </script>
+</body>
+</html>
